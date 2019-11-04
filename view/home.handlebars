@@ -1,0 +1,33 @@
+
+<h1>실시간 검색어 노출 수</h1>
+<div class="chart">
+    <canvas id="myChart"></canvas>
+</div>
+
+<script>
+let ctx = document.querySelector("#myChart").getContext("2d");
+
+let c = new Chart(ctx, {
+    type:'bar',
+    data:{
+        labels:[ {{#each labels }} '{{this}}', {{/each}} ],
+        datasets:[
+            {
+                label:'실시간 검색어',
+                data:[{{ values }}],
+                backgroundColor:'rgba(255, 99, 132, 0.2)',
+                borderColor:'rgba(255, 99, 132, 1)',
+                borderWidth:1
+            }
+        ],
+        options:{
+            scales:{
+                yAxes:[{
+                    ticks:{beginAtZero:true}
+                }]
+            }
+        }
+    }
+});
+
+</script>
