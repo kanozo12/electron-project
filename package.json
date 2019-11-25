@@ -25,6 +25,7 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
+    "cheerio-httpcli": "^0.7.4",
     "request": "^2.88.0"
   }
 }
